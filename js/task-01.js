@@ -1,13 +1,17 @@
 const ulEl = document.querySelector('#categories');
-console.log(ulEl)
 
-const ulLiEl = document.querySelectorAll('.item');
-console.log(`В списке ${ulLiEl.length} категории`)
+const itemEl = ulEl.querySelectorAll('.item');
+console.log(`В списке ${itemEl.length} категории`)
 
-const titleEl = document.querySelectorAll('h2');
-console.log(titleEl[0].textContent)
-
-
+const takeDescr = arrayRefs => {
+    arrayRefs.forEach(el =>
+      console.log(
+        `Категория: ${el.firstElementChild.textContent}\nКоличество элементов: ${el.lastElementChild.children.length}`,
+      ),
+    );
+  };
+  
+takeDescr(itemEl);
 
 
 
