@@ -9,20 +9,11 @@ const ingredients = [
 
 const ulEl = document.querySelector('#ingredients');
 
-// const createItems = arr => {
-//     return arr.map(el => {
-//       let liEl = document.createElement('li');
-//       liEl.textContent = el;
-//       return liEl;
-//     });
-//   };
-  
-//   const ingredientsList = createItems(ingredients);
-  
-//   ulEl.append(...ingredientsList);
 
-ingredients.forEach((ingredient) => {
-    const liEl = document.createElement('li');
-    liEl.textContent = ingredient;
-    ulEl.append(liEl);
-});
+const listItems = ingredients.map(ingredient => {
+    const li = document.createElement('li');
+    li.textContent = ingredient;
+    return li
+})
+
+ulEl.append(...listItems);
